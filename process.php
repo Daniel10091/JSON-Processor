@@ -13,9 +13,9 @@ if ($conn->connect_error) {
 $jsonData = json_decode(file_get_contents('php://input'), true);
 
 $data = new stdClass();
-$data->name = $jsonData['name'];
+$data->name = $jsonData['nome'];
 $data->cpf = $jsonData['cpf'];
-$data->age = $jsonData['age'];
+$data->age = $jsonData['idade'];
 
 $sql = "INSERT INTO json_data (name, cpf, age) VALUES (?, ?, ?)";
 $stmt = $conn->prepare($sql);
